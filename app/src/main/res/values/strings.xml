@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jetpack_demo2</string>
+    <string name="title_activity_part2">Part2</string>
+    <string name="title_activity_part3">Part3</string>
+</resources>
