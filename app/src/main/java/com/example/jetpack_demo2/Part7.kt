@@ -21,7 +21,9 @@ class Part7 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            //state scaffold
             val scaffoldState = rememberScaffoldState()
+            //state textdfield
             var textFieldState by remember {
                 mutableStateOf("")
             }
@@ -37,6 +39,7 @@ class Part7 : ComponentActivity() {
                         .fillMaxSize()
                         .padding(horizontal = 30.dp)
                 ) {
+                    //textfield to display text
                     TextField(
                         value = textFieldState,
                         label = {
@@ -49,6 +52,7 @@ class Part7 : ComponentActivity() {
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(15.dp))
+                    //button to input text
                     Button(onClick = {
                         scope.launch {
                             scaffoldState.snackbarHostState.showSnackbar(
