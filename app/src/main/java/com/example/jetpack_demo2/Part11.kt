@@ -27,7 +27,9 @@ class Part11 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            //size to remember box
             var sizeState by remember { mutableStateOf(200.dp) }
+            //animate the box
             val size by animateDpAsState(
                 targetValue = sizeState,
                 tween(
@@ -35,6 +37,7 @@ class Part11 : ComponentActivity() {
                 )
             )
             val infiniteTransition = rememberInfiniteTransition()
+            //animate color
             val color by infiniteTransition.animateColor(
                 initialValue = Color.Red,
                 targetValue = Color.Green,
@@ -43,6 +46,7 @@ class Part11 : ComponentActivity() {
                     repeatMode = RepeatMode.Reverse
                 )
             )
+            //the actual box
             Box(modifier = Modifier
                 .size(size)
                 .background(color),
