@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.jetpack_demo2.ui.theme.HomeScreen
 import com.example.jetpack_demo2.ui.theme.Jetpack_demo2Theme
 
 class Part14 : ComponentActivity() {
@@ -17,27 +18,8 @@ class Part14 : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Jetpack_demo2Theme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting2("Android")
-                }
+                HomeScreen()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting2(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview2() {
-    Jetpack_demo2Theme {
-        Greeting2("Android")
     }
 }
